@@ -64,8 +64,9 @@ function Man({ name, img, birthday, data }) {
   const ext = () => {
     if (age) {
       const a = age.toString().split("");
+      if ([11, 12, 13, 14, 15, 16, 17, 18, 19, 20].includes(age)) return "лет";
       if (a[a.length - 1] === "1") return "год";
-      if (a[a.length - 1] === ("2" || "3" || "4")) return "года";
+      if (["2", "3", "4"].includes(a[a.length - 1])) return "года";
       return "лет";
     }
   };
